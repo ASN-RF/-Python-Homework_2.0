@@ -32,3 +32,11 @@ for i in Chislo:
 print (sum)
 Otvet (Chislo_otvet, sum)
 
+# 3 вариант. Разбор домашнего задания.
+number = int(input())
+a = number // 100
+b = number % 100 // 10
+c = number % 10
+print (a + b + c)
+ 
+
