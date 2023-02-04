@@ -5,8 +5,8 @@
 # Пример:
 # 385916 -> yes
 # 123456 -> no
-Nomer_bileta = int(input('Введите номер Вашего билета: '))
-print(f'{Nomer_bileta} -> ', end='')
+# Nomer_bileta = int(input('Введите номер Вашего билета: '))
+# print(f'{Nomer_bileta} -> ', end='')
 # 1 вариант. Строки.
 # !!! Переформатировал из int in str, чтобы первоначальный ввод подошел для всех вариантов решения
 # Nomer_bileta_str = str(Nomer_bileta)
@@ -44,17 +44,21 @@ print(f'{Nomer_bileta} -> ', end='')
 #     print ('NO')
 
 # 3 вариант. Числа (аналог 2, цикл отделил функцией)
-def sum_rezult (x):
-    sum_x = 0
-    while x > 10:
-        sum_x += x % 10
-        x //= 10
-    sum_x += x
-    return(round(sum_x))
-if sum_rezult (Nomer_bileta // 1000) == sum_rezult ((Nomer_bileta/1000 - Nomer_bileta//1000)*1000):
-    print ('YES')
-else:
-    print ('NO')   
+
+
+# def sum_rezult(x):
+#     sum_x = 0
+#     while x > 10:
+#         sum_x += x % 10
+#         x //= 10
+#     sum_x += x
+#     return (round(sum_x))
+
+
+# if sum_rezult(Nomer_bileta // 1000) == sum_rezult((Nomer_bileta/1000 - Nomer_bileta//1000)*1000):
+#     print('YES')
+# else:
+#     print('NO')
 
 
 # 4 вариант. Числа (еще вариант с ФУНКЦИЕЙ)
@@ -70,3 +74,15 @@ else:
 #     print ('YES')
 # else:
 #     print ('NO')
+#  5 вариант. Разбор ДЗ
+# n = int(input())
+# a = n // 10 ** 5
+# b = n % 10 ** 5 // 10 ** 4
+# c = n % 10 ** 4 // 10 ** 3
+# d = n % 10 ** 3 // 10 ** 2
+# e = n % 10 ** 2 // 10
+# f = n % 10
+# print(a + b + c == d + e + f)
+#  6 вариант. Строки Разбор
+n = input()
+print (int(n[0]) + int(n[1]) + int(n[2]) == int(n[3]) + int(n[4]) + int(n[5]))
