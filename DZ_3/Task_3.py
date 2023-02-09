@@ -25,25 +25,32 @@
 # Вывод:
 # 12
 
-dictionary = \
+import re
+def language_vvoda(text):
+	return bool(re.search('[а-яА-Я]', text))
+
+dictionary_eng = \
     {
-        '[AEIOULNST]': '1', 
-        '[DG]': '2', 
-        '[BCMP]': '3', 
-        '[FHVWY]': '4', 
-        '[K]': '5',
-        '[JX]': '8',
-        '[QZ]': '10',
-        '[АВЕИНОРСТ]': '1', 
-        '[ДКЛМПУ]': '2', 
-        '[БГЁЬЯ]': '3', 
-        '[ЙЫ]': '4', 
-        '[ЖЗХЦЧ]': '5',
-        '[ШЭЮ]': '8',
-        '[ФЩЪ]': '10',
-        }
-Slovo = str(input(f'Введите Ваше любимое слово: '))
-# for i in Slovo:
-#     for j in dictionary.keys():
-#         if i == j:
-#             print ('Ура нашлось!!!')
+        1:'AEIOULNSTR',
+      	2:'DG',
+      	3:'BCMP',
+      	4:'FHVWY',
+      	5:'K',
+      	8:'JZ',
+      	10:'QZ'
+       }
+dictionary_rus = \
+    {
+        1:'АВЕИНОРСТ',
+      	2:'ДКЛМПУ',
+      	3:'БГЁЬЯ',
+      	4:'ЙЫ',
+      	5:'ЖЗХЦЧ',
+      	8:'ШЭЮ',
+      	10:'ФЩЪ'
+       }
+Slovo = str(input(f'Введите Ваше любимое слово: ')).upper()
+if language_vvoda(Slovo):
+	print(sum([j for i in Slovo for j, v in dictionary_rus.items() if i in v]))
+else:
+	print(sum([j for i in Slovo for j, v in dictionary_eng.items() if i in v]))
