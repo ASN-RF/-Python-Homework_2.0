@@ -5,18 +5,40 @@
 # Пример:
 # 4 4 -> 2 2
 # 5 6 -> 2 3
+
 S = int(input('1 подсказка - Сумма загаданных чисел равна: '))
 P = int(input('2 подсказка - Произведение загаданных чисел равна: '))
-Dis = (-S)**2 - 4*P
-print(Dis)
-if Dis > 0:
-    Pervoe_chislo = int((S - (Dis)**0.5)/2)
-    Vtoroe_chislo = int((S + (Dis)**0.5)/2)
-elif Dis == 0:
-    Pervoe_chislo = int(S / 2)
-    Vtoroe_chislo = Pervoe_chislo
-else:
-    print('Петя обманшик, не загадал ни одного числа!')
-    exit()
-print(f'{S} {P} -> {Pervoe_chislo} {Vtoroe_chislo}')
 
+# ------------------- 1 вариант -------------------------
+# Dis = (-S)**2 - 4*P
+# print(Dis)
+# if Dis > 0:
+#     Pervoe_chislo = int((S - (Dis)**0.5)/2)
+#     Vtoroe_chislo = int((S + (Dis)**0.5)/2)
+# elif Dis == 0:
+#     Pervoe_chislo = int(S / 2)
+#     Vtoroe_chislo = Pervoe_chislo
+# else:
+#     print('Петя обманшик, не загадал ни одного числа!')
+#     exit()
+# print(f'{S} {P} -> {Pervoe_chislo} {Vtoroe_chislo}')
+
+# ------------------- 2 вариант -------------------------
+# find = False
+# for i in range(1, 1000):
+#     if find:
+#         break
+#     for j in range(i, 1000):
+#         if i+j == S and i*j == P:
+#             find = True
+#             print(f'{S} {P} -> {i} {j}')
+#             break
+# else:
+#     print('Петя обманшик, не загадал ни одного числа!')
+
+
+# ------------------- 3 вариант -------------------------
+x = 1
+while x*(S-x) != P:
+    x += 1
+print(f'{S} {P} -> {x} {S-x}')
