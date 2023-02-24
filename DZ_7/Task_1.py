@@ -13,29 +13,27 @@
 # Условие
 Glasnie = ['а', 'е', 'ё', 'и', 'о', 'ы', 'у', 'э', 'ю', 'я']   # требуется для всех вариантов
 # Stix = list(input('Дорогой Винни введите свой стих:\n').lower().split())   # требуется для 1 и 4 варианта
-# Stix = ['пара-ра-рам', 'рам-пам-папам', 'па-ра-па-да']  # проверка через стих из примера
+Stix = ['пара-ра-рам', 'рам-пам-папам', 'па-ра-па-да']  # проверка через стих из примера
 
 
 # ------- 1 вариант (for-for-for)-------
-# def proverka (text,bykvi):
-#     spisok = []
-#     for i in text:
-#         count = 0
-#         for j in i:
-#             for h in bykvi:
-#                 if j == h:
-#                     count += 1
-#             else:
-#                 count += 0
-#         spisok.append (count)
-#     if len(set(spisok)) == 1:
-#         return True
-#     else:
-#         return False
-# if proverka (Stix,Glasnie):
-#     print ('Парам пам-пам')
-# else:
-#     print ('Пам парам')
+def proverka (text,bykvi):
+    spisok = []
+    for i in text:
+        count = 0
+        for j in i:
+            for h in bykvi:
+                if j == h:
+                    count += 1
+        spisok.append (count)
+    if len(set(spisok)) == 1:
+        return True
+    else:
+        return False
+if proverka (Stix,Glasnie):
+    print ('Парам пам-пам')
+else:
+    print ('Пам парам')
     
 # # ------- 2 вариант -------
 # Dlina = [len([i for i in spisok if i.lower() in Glasnie]) for spisok in input().split()]
